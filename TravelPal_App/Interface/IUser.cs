@@ -2,10 +2,11 @@
 {
     public interface IUser
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Country { get; set; }
-        void Iuser(string username, string password, string country);
+        string Username { get; set; }
+        string Password { get; set; }
+        string Country { get; set; }
+        string IUser(string username, string password, string country);
+
 
 
         //public IUser(string username, string password, string country)
