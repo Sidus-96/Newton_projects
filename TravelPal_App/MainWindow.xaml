@@ -5,8 +5,70 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal_App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+         WindowStartupLocation="CenterScreen"
+Title="TravelPal" Height="500" Width="600" ResizeMode="CanMinimize" Background="MediumSlateBlue">
+    
     <Grid>
-       
+        <Grid.Background>
+            <ImageBrush ImageSource="\images/background_stock.jpg" Opacity="0.5"/>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+          <RowDefinition Height="40"/>
+          <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="0" Grid.RowSpan="2" Margin="0,0,0,0" Opacity="0.8" >
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="MediumSlateBlue"/>
+                    <GradientStop Color="MintCream" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+
+            <Label Content="Travelpal" HorizontalAlignment="Center" FontFamily="Arial" FontSize="35" Margin="0,20,0,0" />
+            <TextBlock Text="Username" Margin="0,40,0,0" FontSize="15" FontFamily="Arial" />
+            <TextBox Name="txtUserNameSignIn" BorderThickness="0,0,0,1" Margin="0,4,0,0" Width="245" Opacity="0.8">
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="MintCream"/>
+                        <GradientStop Color="MediumSlateBlue" Offset="3" />
+                    </LinearGradientBrush>
+                </TextBox.Background>
+            </TextBox>
+            <TextBlock Text="Password" Margin="0,5,0,0" FontSize="15" FontFamily="Arial" />
+            <PasswordBox Name="txtPasswordSignIn" Opacity="0.8" >
+                <PasswordBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="MintCream"/>
+                        <GradientStop Color="MediumSlateBlue" Offset="3" />
+                    </LinearGradientBrush>
+                </PasswordBox.Background>
+            </PasswordBox>
+            
+            <Button x:Name="btnLogin" Height="29" Width="90" Content="Login" Margin="0,10,0,0" FontSize="18" BorderThickness="1,1,1,1" Click="btnLogin_Click"   >
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+
+            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                <TextBlock VerticalAlignment="Center"> Don't have an account? Sign up</TextBlock>
+                <Button x:Name="btnRegister" Background="{x:Null}" Margin="0,0,0,0" Click="btnRegister_Click" BorderBrush="{x:Null}">
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="Blue" FontWeight="Bold" FontSize="12" TextAlignment="Right"><Run Text="here"/></TextBlock>
+
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+        </StackPanel>
     </Grid>
 </Window>
