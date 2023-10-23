@@ -20,6 +20,29 @@ namespace TravelPal_App.Managers
             return true;
 
         }
+        public static void RemoveUser(string username)
+        {
+            //Lägg till ta bort användarefunktion finns ej med i instruktionerna? 
+        }
+        public static void UpdateUsername(string username)
+        {
+            //I userdetails lägg till senare
+        }
+
+        private static void ValidateUsername(string username)
+        {
+            //skriv in validering för userName
+        }
+        public static bool SignInUser(string username, string password)
+        {
+            //skriv in if för inloggning
+            return false;
+        }
+
+        public static void SignOutUser()
+        {
+            //ngt logga ut användare
+        }
 
 
 
