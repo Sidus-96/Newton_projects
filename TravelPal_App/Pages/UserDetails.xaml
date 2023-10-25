@@ -1,0 +1,132 @@
+﻿<Page x:Class="TravelPal_App.Pages.UserDetails"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TravelPal_App.Pages"
+      mc:Ignorable="d" 
+       d:DesignHeight="450" d:DesignWidth="800"
+ Title="UserDetails" Background="MediumSlateBlue" >
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+
+
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="17*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left" Grid.Row="0" Grid.RowSpan="2" Margin="28,0,0,0" Opacity="0.8"  Grid.ColumnSpan="2" >
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="MediumSlateBlue"/>
+                    <GradientStop Color="MintCream" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Label Content="User settings" HorizontalAlignment="Center" FontFamily="Arial" FontSize="25" Margin="0,20,0,20" />
+
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Text="Username" Margin="0,0,10,0" FontSize="15" FontFamily="Arial"   />
+                <TextBox Name="txtUsernameDetails" BorderThickness="0,0,0,1" Margin="0,0,20,0" Width="195" Opacity="0.8" Height="19" IsEnabled="False">
+                    <TextBox.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="MintCream"/>
+                            <GradientStop Color="MediumSlateBlue" Offset="3" />
+                        </LinearGradientBrush>
+                    </TextBox.Background>
+                </TextBox>
+
+
+            </StackPanel>
+            <Button x:Name="btnChangeUserName" Background="{x:Null}" Margin="80,0,0,0"  BorderBrush="{x:Null}" Click="btnChangeUserName_Click" Width="90" HorizontalAlignment="Left">
+                <TextBlock Foreground="Blue" FontWeight="Bold" FontSize="10"  Width="85"><Run Text="Change username"/></TextBlock>
+            </Button>
+
+            <Expander Name="expanderUserName" IsExpanded="True" Visibility="Collapsed">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,25" >
+                    <TextBlock Text="New username" Margin="0,3,10,0" FontSize="12" FontFamily="Arial" />
+                    <TextBox BorderThickness="0,0,0,1" Margin="0,0,20,0" Width="195" Opacity="0.8" Height="19">
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="MintCream"/>
+                                <GradientStop Color="MediumSlateBlue" Offset="3" />
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+                </StackPanel>
+            </Expander>
+
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Text="Password" Margin="0,0,10,0" FontSize="15" FontFamily="Arial" />
+                <TextBox BorderThickness="0,0,0,1" Margin="0,0,20,0" Width="195" Opacity="0.8" Height="19" Text="**********" IsEnabled="False">
+                    <TextBox.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="MintCream"/>
+                            <GradientStop Color="MediumSlateBlue" Offset="3" />
+                        </LinearGradientBrush>
+                    </TextBox.Background>
+                </TextBox>
+
+
+            </StackPanel>
+            <Button x:Name="btnChangePasswordExpand" Background="{x:Null}" Margin="80,0,0,0"  BorderBrush="{x:Null}"  Width="90" HorizontalAlignment="Left" Click="btnChangePasswordExpand_Click">
+                <TextBlock Foreground="Blue" FontWeight="Bold" FontSize="10"  Width="85"><Run Text="Change password"/></TextBlock>
+            </Button>
+
+            <Expander Name="expanderPassword" IsExpanded="True" Visibility="Collapsed">
+                <StackPanel Orientation="Vertical" >
+
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,2" >
+                        <TextBlock Text="New Password" Margin="0,0,27,0" FontSize="12" FontFamily="Arial" />
+                        <TextBox BorderThickness="0,0,0,1" Margin="0,0,20,0" Width="195" Opacity="0.8" Height="19">
+                            <TextBox.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="MintCream"/>
+                                    <GradientStop Color="MediumSlateBlue" Offset="3" />
+                                </LinearGradientBrush>
+                            </TextBox.Background>
+                        </TextBox>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10"  >
+                        <TextBlock Text="Confirm Password" Margin="0,0,10,0" FontSize="12" FontFamily="Arial" />
+                        <TextBox BorderThickness="0,0,0,1" Margin="0,0,20,0" Width="195" Opacity="0.8" Height="19">
+                            <TextBox.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="MintCream"/>
+                                    <GradientStop Color="MediumSlateBlue" Offset="3" />
+                                </LinearGradientBrush>
+                            </TextBox.Background>
+                        </TextBox>
+
+                    </StackPanel>
+                </StackPanel>
+
+
+
+            </Expander>
+
+
+            <TextBlock Text="Country of origin" Margin="0,5,0,0" FontSize="15" FontFamily="Arial" />
+            <ComboBox Name="comboCountries"/>
+            <Button x:Name="SaveNewUserDetails" Height="29" Width="90" Content="Save" Margin="0,15,0,0" FontSize="15" BorderThickness="1,1,1,1" Click="SaveNewUserDetails_Click"  >
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+
+
+        </StackPanel>
+
+
+    </Grid>
+</Page>

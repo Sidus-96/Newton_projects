@@ -60,7 +60,7 @@ Title="TravelPal" Height="500" Width="600" ResizeMode="CanMinimize" Background="
 
             <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
                 <TextBlock VerticalAlignment="Center"> Don't have an account? Sign up</TextBlock>
-                <Button x:Name="btnRegister" Background="{x:Null}" Margin="0,0,0,0" Click="btnRegister_Click" BorderBrush="{x:Null}">
+                <Button x:Name="btnAddUser" Background="{x:Null}" Margin="0,0,0,0"  BorderBrush="{x:Null}" Click="btnAddUser_Click">
 
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Foreground="Blue" FontWeight="Bold" FontSize="12" TextAlignment="Right"><Run Text="here"/></TextBlock>

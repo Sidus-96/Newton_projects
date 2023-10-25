@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\TravelPal_App\App.xaml
-11407045341
+7-1358238634
 
-8-1988630769
+18-137667205
 198-200740077
-MainWindow.xaml;
+MainWindow.xaml;Pages\AddTravelPage.xaml;Pages\TravelDashBoard.xaml;Pages\TravelDetails.xaml;Pages\UserDetails.xaml;RegisterWindow.xaml;TravelWindow.xaml;
 
 True
 

@@ -5,7 +5,7 @@
         string Username { get; set; }
         string Password { get; set; }
         string Country { get; set; }
-        string IUser(string username, string password, string country);
+        //  string IUser(string username, string password, string country); // Fråga Albin
 
 
 

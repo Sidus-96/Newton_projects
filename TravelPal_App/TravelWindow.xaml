@@ -1,0 +1,69 @@
+﻿<Window x:Class="TravelPal_App.TravelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TravelPal_App"
+        mc:Ignorable="d"
+        Title="Travel Pal" MaxHeight="800" MinHeight="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"  Background="MediumSlateBlue" >
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="\images/background_stock_2.jpg" Opacity="0.2"/>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition Width="223*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="0" Grid.RowSpan="2" Opacity="0.8" Width="200" Height="754" VerticalAlignment="Center" >
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="MediumSlateBlue"/>
+                    <GradientStop Color="MintCream" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0,30,0,0"  >
+
+
+                <Label Name="lblSignedInUser" Content="User" FontSize="18" Width="Auto" />
+                <Button Name="btnUserSetting" Width="20" Height="20" Click="userSettings_Click" Background="{x:Null}">
+                    <Image Source="images/settingscog.PNG"/>
+                </Button>
+
+            </StackPanel>
+            <Button x:Name="btnDashBoard" Height="29" Width="170" Content="Dashboard" Margin="0,30,0,0" FontSize="20" BorderThickness="1,1,1,1" VerticalAlignment="Center" Click="btnDashBoard_Click"  >
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="btnAddTravel" Height="29" Width="170" Content="Add travel" Margin="0,15,0,0" FontSize="20" BorderThickness="1,1,1,1" Click="btnAddTravel_Click" VerticalAlignment="Center"  >
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+
+
+        </StackPanel>
+        <Button Name="btnSignOut" Grid.Column="0" Grid.Row="2" Content="Sign out" FontSize="15" Margin=" 0,1,0,2" Opacity="0.8" Click="btnSignOut_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="MediumSlateBlue"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Frame x:Name="_mainframeWindow" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden" />
+
+    </Grid>
+</Window>
