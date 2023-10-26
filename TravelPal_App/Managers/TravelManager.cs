@@ -12,7 +12,7 @@ namespace TravelPal_App.Managers
               new Travel { User = "test",Id= 1,NumberOfTravelers=1, Country= "Sweden",TypeOfTravel= "Vaccation",Allinclusive= "yes",WorkDetails= " ",FromDate= "2023-10-25",ToDate= "2023-11-25"},
                new Travel { User = "User not found",Id= 2,NumberOfTravelers=3, Country= "Sweden",TypeOfTravel= "Vaccation",Allinclusive= "yes",WorkDetails= " ",FromDate= "2023-10-25",ToDate= "2023-11-25"},
                 new Travel { User = "User not found",Id= 3,NumberOfTravelers=5, Country= "Denmark",TypeOfTravel= "Work",Allinclusive= "",WorkDetails= " ta med anteckningar",FromDate= "2023-10-25",ToDate= "2023-11-25"},
-                    new Travel { User = "User not found",Id= 4,NumberOfTravelers=7, Country= "Norway",TypeOfTravel= "Vaccation",Allinclusive= "no",WorkDetails= " ",FromDate= "2023-10-25",ToDate= "2023-11-25"},
+                    new Travel { User = "User not found",Id= 4,NumberOfTravelers=7, Country= "Norway",City="Oslo", TypeOfTravel= "Vaccation",Allinclusive= "no",WorkDetails= " ",FromDate= "2023-10-25",ToDate= "2023-11-25"},
         };
         public static Travel? SelectedId { get; set; }
         public static List<Pack_Item> Pack_Items { get; set; } = new()
@@ -52,7 +52,7 @@ namespace TravelPal_App.Managers
 
             return contentExist;
         }
-        public static Travel? AddTravel(string country, string typeOfTravel, int numberOfTravelers, bool allInClusive_bool, string workdetails, string fromdate, string todate)
+        public static Travel? AddTravel(string country, string city, string typeOfTravel, int numberOfTravelers, bool allInClusive_bool, string workdetails, string fromdate, string todate)
         {
             string user = UserManager.SignedInUser.Username;
             string allinclusive_text = "";
@@ -63,7 +63,7 @@ namespace TravelPal_App.Managers
                 allinclusive_text = "no";
             }
             int id = IdCheck();
-            Travel newTravel = new(user, id, country, typeOfTravel, numberOfTravelers, allinclusive_text, workdetails, fromdate, todate);
+            Travel newTravel = new(user, id, country, city, typeOfTravel, numberOfTravelers, allinclusive_text, workdetails, fromdate, todate);
             Travelsadded.Add(newTravel);
             return newTravel;
         }

@@ -101,14 +101,16 @@ namespace TravelPal_App.Pages
                 string? workDetails = txtWorkDetails.Text;
                 string? fromDate = calenderdateFrom.SelectedDate.Value.ToString("yyyy.MM.dd", CultureInfo.InvariantCulture);
                 string? toDate = calenderdateTo.SelectedDate.Value.ToString("yyyy.MM.dd", CultureInfo.InvariantCulture);
-                TravelManager.AddTravel(country, typeOfTravel, numberOftravelers, checkAllInClusive, workDetails, fromDate, toDate);
 
-                MessageBox.Show("Travel added to list \n See Dashboard for your added trips.", "TravelPal");
+
+
                 foreach (var item in lstViewPackList.Items) //Lägga till saker i listan för den nuvarande resan.
 
                 {
                     TravelManager.AddPackItem(((TravelPal_App.Models.Pack_Item)item).PackItem, ((TravelPal_App.Models.Pack_Item)item).PackItemQuantity, ((TravelPal_App.Models.Pack_Item)item).PackItemIsRequired);
                 }
+                TravelManager.AddTravel(country, city, typeOfTravel, numberOftravelers, checkAllInClusive, workDetails, fromDate, toDate);
+                MessageBox.Show("Travel added to list \n See Dashboard for your added trips.", "TravelPal");
                 ClearInput();
 
             }

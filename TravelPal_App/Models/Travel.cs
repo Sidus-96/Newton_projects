@@ -9,6 +9,7 @@
         public string? User { get; set; }
         public int Id { get; set; }
         public string? Country { get; set; }
+        public string City { get; set; }
         public string TypeOfTravel { get; set; }
         public int NumberOfTravelers { get; set; }
         public string? Allinclusive { get; set; }
@@ -18,11 +19,12 @@
         public int SelectedId { get; set; }
 
 
-        public Travel(string user, int id, string country, string typeOfTravel, int numberoftravelers, string allinsluive_text, string workdetails, string fromdate, string todate)
+        public Travel(string user, int id, string country, string city, string typeOfTravel, int numberoftravelers, string allinsluive_text, string workdetails, string fromdate, string todate)
         {
             User = user;
             Id = id;
             Country = country;
+            City = city;
             TypeOfTravel = typeOfTravel;
             NumberOfTravelers = numberoftravelers;
             Allinclusive = allinsluive_text;

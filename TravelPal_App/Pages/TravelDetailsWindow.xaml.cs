@@ -12,7 +12,7 @@ namespace TravelPal_App.Pages
     public partial class TravelDetailsWindow : Page
     {
 
-
+        int selected_id;
 
 
         public TravelDetailsWindow()
@@ -36,7 +36,7 @@ namespace TravelPal_App.Pages
 
 
 
-            int selected_id = TravelManager.SelectedId.SelectedId; //DENNA METODEN FUNKAR
+            selected_id = TravelManager.SelectedId.SelectedId; //DENNA METODEN FUNKAR
 
             foreach (Travel travel in TravelManager.Travelsadded)
             {
@@ -45,6 +45,7 @@ namespace TravelPal_App.Pages
                 {
                     //   lstTravelDetails.Items.Add(newItem: new Travel { Id = travel.Id, Country = travel.Country, TypeOfTravel = travel.TypeOfTravel });
                     comboCountriesDetail.Text = travel.Country;
+                    txtCityDetails.Text = travel.City;
                     //  MessageBox.Show(travel.Country);
                     cmbTypeOfTravelDetails.Text = travel.TypeOfTravel;
                     cmbNumberOfTravelersDetail.Text = travel.NumberOfTravelers.ToString();
@@ -72,6 +73,7 @@ namespace TravelPal_App.Pages
 
                     calenderdateFromDetails.Text = travel.FromDate;
                     calenderdateToDetails.Text = travel.ToDate;
+                    txtLengthOfTrip.Text = (DateTime.Parse(travel.ToDate) - DateTime.Parse(travel.FromDate)).Days.ToString();
 
                     foreach (Pack_Item packitem in TravelManager.Pack_Items)
                     {
@@ -114,7 +116,71 @@ namespace TravelPal_App.Pages
 
         private void btnAddItemPackList_Click(object sender, RoutedEventArgs e)
         {
+            string packItemName = txtItemPacklist.Text;
+            string? packItemQuantity = comboboxQuantityPack.SelectedItem.ToString();
+            string? isrequired = "";
+            if (packItemName.Trim() == null || packItemName == "")
+            {
+                MessageBox.Show("You need to add an item first", "Warning");
+            }
+            else
+            {
+                lstPackItemsDetails.Items.Add(new Pack_Item { PackItem = packItemName, PackItemQuantity = packItemQuantity, PackItemIsRequired = isrequired });
+            }
+        }
+        private void DateTimechanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (txtLengthOfTrip.Text.Length > 0)
+            {
+                txtLengthOfTrip.Text = (DateTime.Parse(calenderdateToDetails.Text) - DateTime.Parse(calenderdateFromDetails.Text)).Days.ToString();
+            }
 
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            comboCountriesDetail.IsEnabled = true;
+            txtCityDetails.IsEnabled = true;
+            cmbTypeOfTravelDetails.IsEnabled = true;
+            txtWorkDetailsDetails.IsEnabled = true;
+            chkboxAllInclusiveDetails.IsEnabled = true;
+            cmbNumberOfTravelersDetail.IsEnabled = true;
+            calenderdateFromDetails.IsEnabled = true;
+            calenderdateToDetails.IsEnabled = true;
+            chkboxTravelDocument.IsEnabled = true;
+            txtItemPacklist.IsEnabled = true;
+            btnAddItemPackList.IsEnabled = true;
+            btnSave.IsEnabled = true;
+
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+
+            foreach (Travel travelUpdate in TravelManager.Travelsadded)
+            {
+                if (UserManager.SignedInUser?.Username == travelUpdate.User && travelUpdate.Id == selected_id)
+                {
+
+                    travelUpdate.Country = comboCountriesDetail.Text;
+                    travelUpdate.City = txtCityDetails.Text;
+                    travelUpdate.TypeOfTravel = cmbTypeOfTravelDetails.Text;
+                    travelUpdate.WorkDetails = txtWorkDetailsDetails.Text;
+                    string allinclusive_text = "";
+                    if (chkboxAllInclusiveDetails.IsChecked.Value == true)
+                    { allinclusive_text = "yes"; }
+                    else
+                    {
+                        allinclusive_text = "no";
+                    }
+                    travelUpdate.Allinclusive = allinclusive_text;
+                    travelUpdate.NumberOfTravelers = Int32.Parse(cmbNumberOfTravelersDetail.Text);
+                    travelUpdate.FromDate = calenderdateFromDetails.Text;
+                    travelUpdate.ToDate = calenderdateToDetails.Text;
+
+
+                }
+            }
         }
     }
 }
