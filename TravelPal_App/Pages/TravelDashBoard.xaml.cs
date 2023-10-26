@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using TravelPal_App.Managers;
 using TravelPal_App.Models;
@@ -13,6 +14,9 @@ namespace TravelPal_App.Pages
         public TravelDashBoard()
         {
             InitializeComponent();
+
+
+
             foreach (Travel travel in TravelManager.Travelsadded)
             {
 
@@ -27,6 +31,20 @@ namespace TravelPal_App.Pages
 
         private void btnDetails_Click(object sender, RoutedEventArgs e)
         {
+            int travelIndex = LstDashBoard.SelectedIndex;
+            var travelId = LstDashBoard.SelectedItems[0];
+            TravelManager.SetSelectedId(((TravelPal_App.Models.Travel)travelId).Id);
+            //int id = ((TravelPal_App.Models.Travel)travelId).Id;
+            //Travel sendId = new Travel();
+            //sendId.SelectedId = id;
+
+
+            //TravelDetailsWindow travelDetailsWindow = new TravelDetailsWindow();
+            //travelDetailsWindow.TravelDetailsWindowId(travelId);
+
+
+            NavigationService.Navigate(new Uri("pages/TravelDetailsWindow.xaml", UriKind.Relative));
+
 
         }
 

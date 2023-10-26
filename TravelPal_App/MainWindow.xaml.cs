@@ -9,9 +9,11 @@ namespace TravelPal_App
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string DeptId { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
 

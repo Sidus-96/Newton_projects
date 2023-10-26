@@ -5,11 +5,13 @@ namespace TravelPal_App.Managers
 {
     public class TravelManager
     {
+
         public static List<Travel> Travelsadded { get; set; } = new()
         {
 
               new Travel { User = "test",Id= 1,NumberOfTravelers=1, Country= "Sweden",TypeOfTravel= "Vaccation",Allinclusive= "Yes",WorkDetails= " ",FromDate= "2023-10-25",ToDate= "2023-11-25"},
         };
+        public static Travel? SelectedId { get; set; }
         public static List<Pack_Item> Pack_Items { get; set; } = new()
         {
 
@@ -63,6 +65,15 @@ namespace TravelPal_App.Managers
             int id = Travelsadded.Count;
             id++;
             return id;
+
+        }
+
+        public static void SetSelectedId(int Selectid)
+        {
+            //I userdetails lägg till senare
+            Travel newId = new(Selectid);
+            SelectedId = newId;
+
 
         }
     }
