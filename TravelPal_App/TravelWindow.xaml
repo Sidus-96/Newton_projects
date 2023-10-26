@@ -63,7 +63,7 @@
             </Button.Background>
         </Button>
 
-        <Frame x:Name="_mainframeWindow" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden" />
+        <Frame x:Name="_mainframeWindow" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden" Navigated="_mainframeWindow_Navigated" />
 
     </Grid>
 </Window>

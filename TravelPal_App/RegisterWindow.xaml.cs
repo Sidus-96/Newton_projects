@@ -44,6 +44,10 @@ namespace TravelPal_App
             {
                 mUser = "User already exist \n";
             }
+            if (UserManager.ValidateUsernameLength(RegisteruserName) == false)
+            {
+                mUser += "Username must be longer than 3 characters \n";
+            }
             if (UserManager.ValidatePassword(Registerpassword) == false)
             {
                 mPassword = "Password need to be longer than 5 signs\n";

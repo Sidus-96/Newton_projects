@@ -114,7 +114,7 @@ namespace TravelPal_App.Pages
                 ClearInput();
 
             }
-            catch (System.NullReferenceException)
+            catch (Exception ex) when (ex is InvalidOperationException || ex is System.NullReferenceException)
             {
                 MessageBox.Show("Please fill in all required fields\n" + "Country\n" + "Type of travel\n" + "From date\n" + "To date\n", "Warning");
             }

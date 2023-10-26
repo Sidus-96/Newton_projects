@@ -54,7 +54,7 @@
             <Expander Name="expanderUserName" IsExpanded="True" Visibility="Collapsed">
                 <StackPanel Orientation="Horizontal" Margin="0,0,0,25" >
                     <TextBlock Text="New username" Margin="0,3,10,0" FontSize="12" FontFamily="Arial" />
-                    <TextBox BorderThickness="0,0,0,1" Margin="0,0,20,0" Width="195" Opacity="0.8" Height="19">
+                    <TextBox x:Name="txtNewUsername" BorderThickness="0,0,0,1" Margin="0,0,20,0" Width="195" Opacity="0.8" Height="19">
                         <TextBox.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="MintCream"/>
@@ -87,7 +87,7 @@
 
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,2" >
                         <TextBlock Text="New Password" Margin="0,0,27,0" FontSize="12" FontFamily="Arial" />
-                        <TextBox BorderThickness="0,0,0,1" Margin="0,0,20,0" Width="195" Opacity="0.8" Height="19">
+                        <TextBox x:Name="txtNewPassword" BorderThickness="0,0,0,1" Margin="0,0,20,0" Width="195" Opacity="0.8" Height="19">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="MintCream"/>
@@ -99,7 +99,7 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,10"  >
                         <TextBlock Text="Confirm Password" Margin="0,0,10,0" FontSize="12" FontFamily="Arial" />
-                        <TextBox BorderThickness="0,0,0,1" Margin="0,0,20,0" Width="195" Opacity="0.8" Height="19">
+                        <TextBox x:Name="txtNewPasswordConfirm" BorderThickness="0,0,0,1" Margin="0,0,20,0" Width="195" Opacity="0.8" Height="19">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="MintCream"/>
@@ -115,14 +115,22 @@
 
             </Expander>
 
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Country of origin" Margin="0,5,0,0" FontSize="15" FontFamily="Arial" />
+                <ComboBox Name="comboCountries" Width="150" Margin="5,0,0,0" IsEditable="True"  IsReadOnly="True"  Text=" "  />
+            </StackPanel>
+     
+            <StackPanel Orientation="Horizontal">
 
-            <TextBlock Text="Country of origin" Margin="0,5,0,0" FontSize="15" FontFamily="Arial" />
-            <ComboBox Name="comboCountries"/>
-            <Button x:Name="SaveNewUserDetails" Height="29" Width="90" Content="Save" Margin="0,15,0,0" FontSize="15" BorderThickness="1,1,1,1" Click="SaveNewUserDetails_Click"  >
-                <Button.Background>
-                    <ImageBrush/>
-                </Button.Background>
-            </Button>
+                <Button x:Name="btnsaveNewUserDetails" Height="29" Width="90" Content="Save" Margin="50,15,0,0" FontSize="15" BorderThickness="1,1,1,1" Click="SaveNewUserDetails_Click" BorderBrush="#FF04FF1F"  >
+                    <Button.Background>
+                        <ImageBrush/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnCancel" Height="29" Width="90" Content="Cancel"  Margin="15,15,0,0" FontSize="15" BorderThickness="1,1,1,1" Background="{x:Null}" BorderBrush="#FFE40A0A" Click="btnCancel_Click"/>
+            </StackPanel>
+
+
 
 
         </StackPanel>

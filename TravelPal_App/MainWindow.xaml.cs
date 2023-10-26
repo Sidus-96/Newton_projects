@@ -42,10 +42,10 @@ namespace TravelPal_App
             }
             else
             {
-                //  MessageBox.Show("Invalid username or password!", "Warning");
-                TravelWindow travelwindow = new TravelWindow();
-                travelwindow.Show();
-                Close();
+                MessageBox.Show("Invalid username or password!", "Warning");
+                //TravelWindow travelwindow = new TravelWindow();
+                //travelwindow.Show();
+                //Close();
 
             }
         }

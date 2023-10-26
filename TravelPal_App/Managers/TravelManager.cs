@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TravelPal_App.Models;
 
 namespace TravelPal_App.Managers
@@ -69,7 +70,13 @@ namespace TravelPal_App.Managers
         }
         public static int IdCheck()
         {
-            int id = Travelsadded.Count;
+            int id = 0;
+            foreach (var travel in Travelsadded)
+            {
+                id = Math.Max(travel.Id, 0);
+            }
+            //id = Travelsadded.Count;
+
             id++;
             return id;
 

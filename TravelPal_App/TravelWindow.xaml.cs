@@ -39,5 +39,10 @@ namespace TravelPal_App
             mainwindow.Show();
             Close();
         }
+
+        private void _mainframeWindow_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+            lblSignedInUser.Content = UserManager.SignedInUser.Username;
+        }
     }
 }

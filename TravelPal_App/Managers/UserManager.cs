@@ -39,6 +39,18 @@ namespace TravelPal_App.Managers
 
             return isValidUsername;
         }
+        public static bool ValidateUsernameLength(string username)
+        {
+            bool isValidUsernamelength = false;
+            if (username.Length >= 3)
+            {
+                return true;
+            }
+
+
+
+            return isValidUsernamelength;
+        }
         public static bool ValidatePassword(string password)
         {
             bool isValidPassword = false;

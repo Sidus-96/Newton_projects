@@ -102,6 +102,18 @@ namespace TravelPal_App.Pages
         private void cmbTypeOfTravelDetails_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+            switch (cmbTypeOfTravelDetails.SelectedIndex) //För att visa och dölja beroende på om man har valt Vaccation eller Work
+            {
+                case 0:
+                    chkboxAllInclusiveDetails.Visibility = System.Windows.Visibility.Visible;
+                    stkPanelWorkDetails.Visibility = System.Windows.Visibility.Collapsed;
+                    break;
+
+                case 1:
+                    stkPanelWorkDetails.Visibility = System.Windows.Visibility.Visible;
+                    chkboxAllInclusiveDetails.Visibility = System.Windows.Visibility.Collapsed;
+                    break;
+            }
         }
         private void chkboxTravelDocument_CheckedDetails(object sender, RoutedEventArgs e)
         {
@@ -177,10 +189,10 @@ namespace TravelPal_App.Pages
                     travelUpdate.NumberOfTravelers = Int32.Parse(cmbNumberOfTravelersDetail.Text);
                     travelUpdate.FromDate = calenderdateFromDetails.Text;
                     travelUpdate.ToDate = calenderdateToDetails.Text;
-
-
                 }
             }
+            MessageBox.Show("Trip updated");
+            NavigationService.Navigate(new Uri("pages/TravelDashBoard.xaml", UriKind.Relative));
         }
     }
 }
