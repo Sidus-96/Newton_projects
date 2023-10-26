@@ -34,13 +34,7 @@ namespace TravelPal_App.Pages
             int travelIndex = LstDashBoard.SelectedIndex;
             var travelId = LstDashBoard.SelectedItems[0];
             TravelManager.SetSelectedId(((TravelPal_App.Models.Travel)travelId).Id);
-            //int id = ((TravelPal_App.Models.Travel)travelId).Id;
-            //Travel sendId = new Travel();
-            //sendId.SelectedId = id;
 
-
-            //TravelDetailsWindow travelDetailsWindow = new TravelDetailsWindow();
-            //travelDetailsWindow.TravelDetailsWindowId(travelId);
 
 
             NavigationService.Navigate(new Uri("pages/TravelDetailsWindow.xaml", UriKind.Relative));

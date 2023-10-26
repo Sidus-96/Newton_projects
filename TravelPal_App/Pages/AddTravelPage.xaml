@@ -93,7 +93,7 @@
 
                             <GridViewColumn Header="PackItem" DisplayMemberBinding="{Binding PackItem}" Width="70"/>
                             <GridViewColumn Header="Quantity" DisplayMemberBinding="{Binding PackItemQuantity}" Width="50"/>
-                            <GridViewColumn Header="Required" DisplayMemberBinding="{Binding Required}" Width="50"/>
+                            <GridViewColumn Header="Required" DisplayMemberBinding="{Binding PackItemIsRequired}" Width="50"/>
 
 
                         </GridView>

@@ -36,28 +36,44 @@
                 </LinearGradientBrush>
             </StackPanel.Background>
 
-            <TextBox Margin="0,5,0,0"/>
-            <TextBox Margin="0,5,0,0"/>
-            <CheckBox Content="All inclusive?" FontSize="12" Margin="0,7,0,0"/>
+            <ComboBox Name="comboCountriesDetail" Margin="20,5,20,0"  Grid.Row="1" Grid.Column="1" Height="35" HorizontalContentAlignment="Center" FontSize="16"  IsEditable="True"  IsReadOnly="True"  Text="-- Select a country --" Opacity="0.8"  />
+            <StackPanel >
+                <Label  Content="City" Margin="20,0,20,0"/>
+                <TextBox Name="txtCityDetails" Margin="20,0,20,0" >
+
+                </TextBox>
+
+            </StackPanel>
+            <ComboBox Name="cmbTypeOfTravelDetails"  Grid.Row="1" Grid.Column="1" Margin="20,10,20,0"  Height="35" HorizontalContentAlignment="Center" FontSize="16"  IsEditable="True"  IsReadOnly="True"  Text="-- For vaccation or work? --" Opacity="0.8" SelectionChanged="cmbTypeOfTravelDetails_SelectionChanged"  >
+                <ComboBoxItem Content="Vaccation"/>
+                <ComboBoxItem Content="Work"/>
+            </ComboBox>
+            <CheckBox Name="chkboxAllInclusiveDetails" Content="All inclusive?" FontSize="13" Margin="20,7,20,0" Visibility="Collapsed"/>
+            <StackPanel Name="stkPanelWorkDetails" Visibility="Collapsed"   >
+
+                <Label Content="Work Details" Margin = "20,0,20,0" />
+                <TextBox Name="txtWorkDetailsDetails" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+ScrollViewer.VerticalScrollBarVisibility="Visible" MaxHeight="50" TextWrapping="Wrap" Margin = "20,0,20,0" />
+
+            </StackPanel>
             <StackPanel Orientation="Horizontal" >
 
-                <Label Content="How many travelers?" FontSize="12" />
-                <TextBox Width="20" Height="20"/>
+                <Label Content="TravelPals" FontSize="13" Margin="20,0,0,0" />
+
+                <ComboBox Name="cmbNumberOfTravelersDetail"  IsEditable="True"  IsReadOnly="True"   Width="auto">
+
+                </ComboBox>
 
             </StackPanel>
 
 
-            <StackPanel   >
-
-                <Label Content="Work Details" HorizontalContentAlignment="Left"/>
-                <TextBox Name="WorkDetails" ScrollViewer.HorizontalScrollBarVisibility="Auto"
-ScrollViewer.VerticalScrollBarVisibility="Visible" MaxWidth="320" MaxHeight="50" TextWrapping="Wrap" />
-
+           
+            <StackPanel >
+                <Label  Content="From" Margin="20,0,20,0"/>
+                <DatePicker Name="calenderdateFromDetails" Margin="20,0,20,0" Focusable = "False" />
+                <Label  Content="To" Margin="20,0,20,0" />
+                <DatePicker Name="calenderdateToDetails"   Margin="20,0,20,0" Focusable = "False"/>
             </StackPanel>
-            <Label Name="dateFrom" Content="From"/>
-            <DatePicker/>
-            <Label Name="DateTo" Content="To" />
-            <DatePicker/>
 
 
 
@@ -71,12 +87,13 @@ ScrollViewer.VerticalScrollBarVisibility="Visible" MaxWidth="320" MaxHeight="50"
                     <GradientStop Color="MintCream" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <TextBox/>
-            <Grid Height="200" Width="250">
+
+            <Grid Height="200" Width="215">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="57*" />
-                    <ColumnDefinition Width="110*" />
-                    <ColumnDefinition Width="83*" />
+                    <ColumnDefinition Width="66*" />
+                    <ColumnDefinition Width="143*" />
+                    <ColumnDefinition Width="6*"/>
+
                 </Grid.ColumnDefinitions>
 
 
@@ -86,20 +103,22 @@ ScrollViewer.VerticalScrollBarVisibility="Visible" MaxWidth="320" MaxHeight="50"
                     <RowDefinition/>
                     <RowDefinition />
                     <RowDefinition />
-                    <RowDefinition />
+
                 </Grid.RowDefinitions>
 
                 <Label Grid.Row="0" Grid.Column ="0" Grid.ColumnSpan="2" Content="Add an item to a packing list"/>
-                <Label  Grid.Row="1" Grid.Column ="0" Content="Item"/>
-                <TextBox Grid.Row="1" Grid.Column ="1" Grid.ColumnSpan="2" Margin="0,0,0,5"/>
-                <Label  Grid.Row="2" Grid.Column ="0" Content="Quantity"/>
-                <TextBox Grid.Row="2" Grid.Column ="1" Margin="0,0,83,5"/>
-                <CheckBox Grid.Row="3" Grid.Column ="0" Content="Travel Document" Grid.ColumnSpan="2" Margin="0,0,42,0"/>
-                <Button Grid.Row="4" Grid.Column ="1" Content="Add Item" Margin="20,0,20,15" Click="Button_Click" />
-                <Button Grid.Row="5" Grid.Column ="1" Height="30"  Content="Save Travel" Margin="5,1,0,2" Click="Button_Click_1" />
+                <CheckBox  Name="chkboxTravelDocument" Grid.Row="1" Grid.Column ="0" Content="Travel Document" Grid.ColumnSpan="2" Margin="0,0,24,0" Checked="chkboxTravelDocument_CheckedDetails" Unchecked="chkboxTravelDocument_UnCheckedDetails" />
+                <Label  Grid.Row="2" Grid.Column ="0" Content="Item name"/>
+                <TextBox Name="txtItemPacklist" Grid.Row="2" Grid.Column ="1" Margin="0,0,0,5" />
+                <Label  Grid.Row="3" Grid.Column ="0" Content="Quantity"/>
+                <ComboBox Name="comboboxQuantityPack" Grid.Row="3" Grid.Column ="1" Margin="0,2,0,8" Width="50" HorizontalAlignment="Left" SelectedIndex="0"/>
+
+
+                <Button Name="btnAddItemPackList" Grid.Row="4" Grid.Column ="1" Content="Add Item" Margin="0,0,79,15" Click="btnAddItemPackList_Click" />
+
             </Grid>
         </StackPanel>
-        <ListView x:Name="lstTravelDetails" Opacity="0.8" Grid.Column="3" Grid.RowSpan="3" Margin="0,56,5,112">
+        <ListView x:Name="lstPackItemsDetails" Opacity="0.8" Grid.Column="3" Grid.RowSpan="3" Margin="0,56,5,112">
             <ListView.Background>
                 <SolidColorBrush Color="MediumSlateBlue" Opacity="0.6"/>
             </ListView.Background>
@@ -111,9 +130,9 @@ ScrollViewer.VerticalScrollBarVisibility="Visible" MaxWidth="320" MaxHeight="50"
             </ListView.BorderBrush>
             <ListView.View>
                 <GridView >
-                    <GridViewColumn Header="Index" DisplayMemberBinding="{Binding Id}" Width="0" />
-                    <GridViewColumn Header="Country" DisplayMemberBinding="{Binding Country}" Width="70"/>
-                    <GridViewColumn Header="Type" DisplayMemberBinding="{Binding TypeOfTravel}" Width="80"/>
+                    <GridViewColumn Header="PackItem" DisplayMemberBinding="{Binding PackItem}" Width="70"/>
+                    <GridViewColumn Header="Quantity" DisplayMemberBinding="{Binding PackItemQuantity}" Width="50"/>
+                    <GridViewColumn Header="Required" DisplayMemberBinding="{Binding PackItemIsRequired}" Width="55"/>
 
                 </GridView>
 

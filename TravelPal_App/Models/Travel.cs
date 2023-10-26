@@ -35,10 +35,6 @@
             SelectedId = id;
         }
 
-        //public int GetSelectedId()
-        //{
-        //    return SelectedId;
-        //   
-        //}
+
     }
 }

@@ -3,6 +3,7 @@
     public enum Countries_s
     {
         Sweden,
-        Denmark
+        Denmark,
+        Norway
     }
 }
