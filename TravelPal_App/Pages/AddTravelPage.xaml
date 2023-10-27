@@ -60,7 +60,7 @@
 
             <StackPanel Name="stkPanelWork" Visibility="Collapsed"   >
 
-                <Label Content="Work Details" Margin = "20,0,20,0" />
+                <Label Content="Meeting Details" Margin = "20,0,20,0" />
                 <TextBox Name="txtWorkDetails" ScrollViewer.HorizontalScrollBarVisibility="Auto"
          ScrollViewer.VerticalScrollBarVisibility="Visible" MaxHeight="50" TextWrapping="Wrap" Margin = "20,0,20,0" />
 
