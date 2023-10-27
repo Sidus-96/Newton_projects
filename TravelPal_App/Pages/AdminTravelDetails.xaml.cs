@@ -44,14 +44,14 @@ namespace TravelPal_App.Pages
 
                 if (travel.Id == selected_id)
                 {
-                    //   lstTravelDetails.Items.Add(newItem: new Travel { Id = travel.Id, Country = travel.Country, TypeOfTravel = travel.TypeOfTravel });
+
                     comboCountriesDetail.Text = travel.Country;
                     txtCityDetails.Text = travel.City;
-                    //  MessageBox.Show(travel.Country);
+
                     cmbTypeOfTravelDetails.Text = travel.TypeOfTravel;
                     cmbNumberOfTravelersDetail.Text = travel.NumberOfTravelers.ToString();
 
-                    // WorkDetails.Text = travel.Country;
+
 
                     switch (travel.TypeOfTravel) //För att visa och dölja beroende på om man har valt Vaccation eller Work
                     {
@@ -84,8 +84,6 @@ namespace TravelPal_App.Pages
                         }
                     }
                 }
-
-
 
             }
         }

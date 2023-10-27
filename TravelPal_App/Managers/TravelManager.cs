@@ -11,9 +11,7 @@ namespace TravelPal_App.Managers
         {
 
               new Travel { User = "user",Id= 1,NumberOfTravelers=1, Country= "Sweden",TypeOfTravel= "Vaccation",Allinclusive= "yes",WorkDetails= " ",FromDate= "2023-10-25",ToDate= "2023-11-25"},
-               new Travel { User = "User not found",Id= 2,NumberOfTravelers=3, Country= "Sweden",TypeOfTravel= "Vaccation",Allinclusive= "yes",WorkDetails= " ",FromDate= "2023-10-25",ToDate= "2023-11-25"},
-                new Travel { User = "User not found",Id= 3,NumberOfTravelers=5, Country= "Denmark",TypeOfTravel= "Work",Allinclusive= "",WorkDetails= " ta med anteckningar",FromDate= "2023-10-25",ToDate= "2023-11-25"},
-                    new Travel { User = "User not found",Id= 4,NumberOfTravelers=7, Country= "Norway",City="Oslo", TypeOfTravel= "Vaccation",Allinclusive= "no",WorkDetails= " ",FromDate= "2023-10-25",ToDate= "2023-11-25"},
+
         };
         public static Travel? SelectedId { get; set; }
         public static List<Pack_Item> Pack_Items { get; set; } = new()
@@ -49,8 +47,6 @@ namespace TravelPal_App.Managers
             {
                 contentExist = true;
             }
-
-
             return contentExist;
         }
         public static Travel? AddTravel(string country, string city, string typeOfTravel, int numberOfTravelers, bool allInClusive_bool, string workdetails, string fromdate, string todate)
@@ -68,18 +64,15 @@ namespace TravelPal_App.Managers
             Travelsadded.Add(newTravel);
             return newTravel;
         }
-        public static int IdCheck()
+        public static int IdCheck() //Ta fram ett unikt id för varje resa och så att man kan koppla ihop packitems till varje resa. 
         {
             int id = 0;
-            foreach (var travel in Travelsadded)
+            foreach (var travel in Travelsadded) //Sak till framtiden, här kan vi "filtera" per användare så att flera användare kan vara inloggade och lägga till resor.
             {
                 id = Math.Max(travel.Id, 0);
             }
-            //id = Travelsadded.Count;
-
             id++;
             return id;
-
         }
 
         public static void SetSelectedId(int Selectid)
@@ -87,8 +80,6 @@ namespace TravelPal_App.Managers
             //I userdetails lägg till senare
             Travel newId = new(Selectid);
             SelectedId = newId;
-
-
         }
     }
 }

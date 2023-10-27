@@ -21,12 +21,6 @@ namespace TravelPal_App.Managers
             User newUser = new(username, password, country);
             Users.Add(newUser);
             return true;
-
-        }
-
-        public static void UpdateUsername(string username)
-        {
-            //I userdetails lägg till senare
         }
 
         public static bool ValidateUsername(string username)
@@ -51,8 +45,6 @@ namespace TravelPal_App.Managers
                 return true;
             }
 
-
-
             return isValidUsernamelength;
         }
         public static bool ValidatePassword(string password)
@@ -73,8 +65,6 @@ namespace TravelPal_App.Managers
             }
             return !isValidCountry;
         }
-
-
 
         public static bool SignInUser(string username, string password)
         {
@@ -106,14 +96,5 @@ namespace TravelPal_App.Managers
         {
             SignedInUser = null;
         }
-
-
-
-
-
-
-
-
-
     }
 }

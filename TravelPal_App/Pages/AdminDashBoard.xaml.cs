@@ -17,17 +17,11 @@ namespace TravelPal_App.Pages
         {
             InitializeComponent();
 
-
-
             foreach (Travel travel in TravelManager.Travelsadded)
             {
 
-
                 LstDashBoard.Items.Add(new Travel { Id = travel.Id, User = travel.User, Country = travel.Country, TypeOfTravel = travel.TypeOfTravel });
-
             }
-
-
         }
 
         private void btnDetails_Click(object sender, RoutedEventArgs e)
@@ -35,12 +29,7 @@ namespace TravelPal_App.Pages
             int travelIndex = LstDashBoard.SelectedIndex;
             var travelId = LstDashBoard.SelectedItems[0];
             TravelManager.SetSelectedId(((TravelPal_App.Models.Travel)travelId).Id);
-
-
-
             NavigationService.Navigate(new Uri("pages/admintraveldetails.xaml", UriKind.Relative));
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -58,7 +47,6 @@ namespace TravelPal_App.Pages
                     {
                         TravelManager.Travelsadded.Remove(travelRemove);
                     }
-
                 }
                 foreach (Pack_Item packitemRemove in TravelManager.Pack_Items.ToList())
                 {
