@@ -15,12 +15,6 @@ namespace TravelPal_App
         {
             InitializeComponent();
 
-            //countries.AddRange(Enum.GetNames(typeof(Countries_s)).ToList()); //Lägga till Enums i lista, flytta ut listan?
-            //foreach (string country in countries)
-            //{
-            //    cmbCountries.Items.Add(country);
-            //}
-            //  cmbCountries.Items.Add(Enum.GetNames(typeof(Countries_s).));
 
             foreach (var country in Enum.GetValues(typeof(Countries_s)))
             {

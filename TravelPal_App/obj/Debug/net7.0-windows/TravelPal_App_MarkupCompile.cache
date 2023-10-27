@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\TravelPal_App\App.xaml
-7-840338701
+9-1505602990
 
-171080485919
+202017062896
 198-200740077
-MainWindow.xaml;Pages\AddTravelPage.xaml;Pages\TravelDashBoard.xaml;Pages\TravelDetailsWindow.xaml;Pages\UserDetails.xaml;RegisterWindow.xaml;TravelWindow.xaml;
+MainWindow.xaml;Pages\AddTravelPage.xaml;Pages\AdminDashBoard.xaml;Pages\AdminTravelDetails.xaml;Pages\TravelDashBoard.xaml;Pages\TravelDetailsWindow.xaml;Pages\UserDetails.xaml;RegisterWindow.xaml;TravelWindow.xaml;
 
 False
 

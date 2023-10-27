@@ -30,3 +30,7 @@ C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\TravelPal_App\obj\Debug\net
 C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\TravelPal_App\obj\Debug\net7.0-windows\Pages\TravelDashBoard.baml
 C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\TravelPal_App\obj\Debug\net7.0-windows\Pages\TravelDetailsWindow.g.cs
 C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\TravelPal_App\obj\Debug\net7.0-windows\Pages\TravelDetailsWindow.baml
+C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\TravelPal_App\obj\Debug\net7.0-windows\Pages\AdminTravelDetails.g.cs
+C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\TravelPal_App\obj\Debug\net7.0-windows\Pages\AdminTravelDetails.baml
+C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\TravelPal_App\obj\Debug\net7.0-windows\Pages\AdminDashBoard.g.cs
+C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\TravelPal_App\obj\Debug\net7.0-windows\Pages\AdminDashBoard.baml

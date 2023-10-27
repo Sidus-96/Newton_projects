@@ -10,7 +10,7 @@ namespace TravelPal_App.Managers
         public static List<Travel> Travelsadded { get; set; } = new()
         {
 
-              new Travel { User = "test",Id= 1,NumberOfTravelers=1, Country= "Sweden",TypeOfTravel= "Vaccation",Allinclusive= "yes",WorkDetails= " ",FromDate= "2023-10-25",ToDate= "2023-11-25"},
+              new Travel { User = "user",Id= 1,NumberOfTravelers=1, Country= "Sweden",TypeOfTravel= "Vaccation",Allinclusive= "yes",WorkDetails= " ",FromDate= "2023-10-25",ToDate= "2023-11-25"},
                new Travel { User = "User not found",Id= 2,NumberOfTravelers=3, Country= "Sweden",TypeOfTravel= "Vaccation",Allinclusive= "yes",WorkDetails= " ",FromDate= "2023-10-25",ToDate= "2023-11-25"},
                 new Travel { User = "User not found",Id= 3,NumberOfTravelers=5, Country= "Denmark",TypeOfTravel= "Work",Allinclusive= "",WorkDetails= " ta med anteckningar",FromDate= "2023-10-25",ToDate= "2023-11-25"},
                     new Travel { User = "User not found",Id= 4,NumberOfTravelers=7, Country= "Norway",City="Oslo", TypeOfTravel= "Vaccation",Allinclusive= "no",WorkDetails= " ",FromDate= "2023-10-25",ToDate= "2023-11-25"},

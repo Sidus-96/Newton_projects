@@ -1,0 +1,171 @@
+﻿<Page x:Class="TravelPal_App.Pages.AdminTravelDetails"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TravelPal_App.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminTravelDetails">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="\images/Background_stock_2.jpg" Opacity="0.3"/>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="29*" />
+            <ColumnDefinition Width="283*" />
+            <ColumnDefinition Width="76*" />
+            <ColumnDefinition Width="290*" />
+            <ColumnDefinition Width="151*" />
+        </Grid.ColumnDefinitions>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition/>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="1"  Grid.RowSpan="4" Margin="0,56,1,0" >
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="MediumSlateBlue"/>
+                    <GradientStop Color="MintCream" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+
+            <ComboBox Name="comboCountriesDetail" Margin="20,5,20,0"  Grid.Row="1" Grid.Column="1" Height="35" HorizontalContentAlignment="Center" FontSize="16"  IsEditable="True"  IsReadOnly="True"  Text="-- Select a country --" Opacity="0.8"  IsEnabled="False"  />
+            <StackPanel >
+                <Label  Content="City" Margin="20,0,20,0"/>
+                <TextBox Name="txtCityDetails" Margin="20,0,20,0" IsEnabled="False" >
+
+                </TextBox>
+
+            </StackPanel>
+            <ComboBox Name="cmbTypeOfTravelDetails"  Grid.Row="1" Grid.Column="1" Margin="20,10,20,0"  Height="35" HorizontalContentAlignment="Center" FontSize="16"  IsEditable="True"  IsReadOnly="True"  Text="-- For vaccation or work? --" Opacity="0.8" SelectionChanged="cmbTypeOfTravelDetails_SelectionChanged" IsEnabled="False"  >
+                <ComboBoxItem Content="Vaccation"/>
+                <ComboBoxItem Content="Work"/>
+            </ComboBox>
+            <CheckBox Name="chkboxAllInclusiveDetails" Content="All inclusive?" FontSize="13" Margin="20,7,20,0" Visibility="Collapsed" IsEnabled="False" />
+            <StackPanel Name="stkPanelWorkDetails" Visibility="Collapsed"   >
+
+                <Label Content="Work Details" Margin = "20,0,20,0" />
+                <TextBox Name="txtWorkDetailsDetails" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+ScrollViewer.VerticalScrollBarVisibility="Visible" MaxHeight="50" TextWrapping="Wrap" Margin = "20,0,20,0" IsEnabled="False" />
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+
+                <Label Content="TravelPals" FontSize="13" Margin="20,0,0,0" />
+
+                <ComboBox Name="cmbNumberOfTravelersDetail"  IsEditable="True"  IsReadOnly="True"   Width="auto" IsEnabled="False" >
+
+                </ComboBox>
+
+            </StackPanel>
+
+
+
+            <StackPanel >
+                <Label  Content="From" Margin="20,0,20,0"/>
+                <DatePicker Name="calenderdateFromDetails" Margin="20,0,20,0" Focusable = "False"  SelectedDateChanged="DateTimechanged" IsEnabled="False" />
+                <Label  Content="To" Margin="20,0,20,0" />
+                <DatePicker Name="calenderdateToDetails"   Margin="20,0,20,0" Focusable = "False" SelectedDateChanged="DateTimechanged" IsEnabled="False" />
+                <StackPanel Name="stkPanelDateTimeLength" Orientation="Horizontal" >
+
+                    <Label Content="Total length of trip:" Margin = "20,5,0,0" />
+                    <TextBox Name="txtLengthOfTrip"  MaxHeight="20" Width="30" Margin = "0,0,20,0" Focusable="False" />
+
+                </StackPanel>
+            </StackPanel>
+
+
+
+
+
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="3" Grid.RowSpan="2" Margin="0,0,0,-1">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="MediumSlateBlue"/>
+                    <GradientStop Color="MintCream" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+
+            <Grid Height="200" Width="215">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="66*" />
+                    <ColumnDefinition Width="143*" />
+                    <ColumnDefinition Width="6*"/>
+
+
+                </Grid.ColumnDefinitions>
+
+
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition/>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column ="0" Grid.ColumnSpan="2" Content="Add an item to a packing list"/>
+                <CheckBox  Name="chkboxTravelDocument" Grid.Row="1" Grid.Column ="0" Content="Travel Document" Grid.ColumnSpan="2" Margin="0,0,24,0" Checked="chkboxTravelDocument_CheckedDetails" Unchecked="chkboxTravelDocument_UnCheckedDetails" IsEnabled="False"/>
+                <Label  Grid.Row="2" Grid.Column ="0" Content="Item name"/>
+                <TextBox Name="txtItemPacklist" Grid.Row="2" Grid.Column ="1" Margin="0,0,0,5" IsEnabled="False" />
+                <Label  Grid.Row="3" Grid.Column ="0" Content="Quantity"/>
+                <ComboBox Name="comboboxQuantityPack" Grid.Row="3" Grid.Column ="1" Margin="0,2,0,8" Width="50" HorizontalAlignment="Left" SelectedIndex="0" IsEnabled="False" />
+
+
+                <Button Name="btnAddItemPackList" Grid.Row="4" Grid.Column ="1" Content="Add Item" Margin="0,0,79,15" Click="btnAddItemPackList_Click" IsEnabled="False" />
+
+            </Grid>
+        </StackPanel>
+        <ListView x:Name="lstPackItemsDetails" Opacity="0.8" Grid.Column="3" Grid.Row="0" Grid.RowSpan="2" Margin="0,50,5,0" Grid.ColumnSpan="1" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <ListView.Background>
+                <SolidColorBrush Color="MediumSlateBlue" Opacity="0.6"/>
+            </ListView.Background>
+            <ListView.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ListView.BorderBrush>
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn Header="PackItem" DisplayMemberBinding="{Binding PackItem}" Width="70"/>
+                    <GridViewColumn Header="Quantity" DisplayMemberBinding="{Binding PackItemQuantity}" Width="50"/>
+                    <GridViewColumn Header="Required" DisplayMemberBinding="{Binding PackItemIsRequired}" Width="55"/>
+
+                </GridView>
+
+            </ListView.View>
+        </ListView>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="4" >
+            <Button x:Name="btnEdit" Content="Edit" Width="50" Height="40" FontSize="18" Margin="20,0,0,0" Click="btnEdit_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFDAEAEC" Offset="0"/>
+                        <GradientStop Color="#FFF5F7FF" Offset="0.09"/>
+                        <GradientStop Color="#FF14D6D2" Offset="0.92"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnSave" Content="Save" Width="50" Height="40" FontSize="18" Margin="20,0,0,0" IsEnabled="False" Click="btnSave_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFDAEAEC" Offset="0"/>
+                        <GradientStop Color="#FF14D617" Offset="0.92"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

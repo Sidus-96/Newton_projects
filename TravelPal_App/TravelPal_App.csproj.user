@@ -10,6 +10,12 @@
     <Compile Update="Pages\AddTravelPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\AdminDashBoard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\AdminTravelDetails.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\TravelDashBoard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +37,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\AddTravelPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\AdminDashBoard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\AdminTravelDetails.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\TravelDashBoard.xaml">

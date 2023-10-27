@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using TravelPal_App.Managers;
-using TravelPal_App.Models;
 
 namespace TravelPal_App
 {
@@ -16,22 +15,12 @@ namespace TravelPal_App
 
         }
 
-
-
-
-
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
 
             string username = txtUserNameSignIn.Text.ToLower();
             string password = txtPasswordSignIn.Password;
-            if (username == "" || username == null)
-            {
-                User newUser = new("User not found", "password", "country");
-                UserManager.SignedInUser = newUser;
 
-
-            }
 
             bool successLogIn = UserManager.SignInUser(username, password);
             if (successLogIn)
@@ -43,10 +32,6 @@ namespace TravelPal_App
             else
             {
                 MessageBox.Show("Invalid username or password!", "Warning");
-                //TravelWindow travelwindow = new TravelWindow();
-                //travelwindow.Show();
-                //Close();
-
             }
         }
 

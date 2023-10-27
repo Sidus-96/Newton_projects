@@ -32,6 +32,7 @@
                 </LinearGradientBrush>
             </StackPanel.Background>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0,30,0,0"  >
+                
 
 
                 <Label Name="lblSignedInUser" Content="User" FontSize="18" Width="Auto" />
@@ -47,6 +48,11 @@
             </Button>
 
             <Button x:Name="btnAddTravel" Height="29" Width="170" Content="Add travel" Margin="0,15,0,0" FontSize="20" BorderThickness="1,1,1,1" Click="btnAddTravel_Click" VerticalAlignment="Center"  >
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnAdmin" Height="29" Width="170" Content="Admin Dashboard" Margin="0,15,0,0" FontSize="20" BorderThickness="1,1,1,1" Click="btnAdmin_Click" VerticalAlignment="Center" Visibility="Hidden" IsEnabled="False" >
                 <Button.Background>
                     <ImageBrush/>
                 </Button.Background>

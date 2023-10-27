@@ -83,9 +83,6 @@ namespace TravelPal_App.Pages
                         updateCountry = true;
 
                     }
-
-
-
                     if (newUsername.Length > 1 && UserManager.ValidateUsername(newUsername) == false || UserManager.ValidatePassword(newPassword) == false && newPassword.Length > 1)
                     {
                         MessageBox.Show(mUser + mPassword, "Warning");

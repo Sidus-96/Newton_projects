@@ -8,7 +8,11 @@ namespace TravelPal_App.Managers
     {
         public static List<User> Users { get; set; } = new()
         {
-           new User("tim","12345","Sweden"),
+           new User("user","password","Sweden"),
+        };
+        public static List<Admin> Admins { get; set; } = new()
+        {
+            new Admin("admin","password", "Sweden")
         };
         public static IUser? SignedInUser { get; set; }
 
@@ -82,6 +86,17 @@ namespace TravelPal_App.Managers
 
                     return true;
                 }
+
+            }
+            foreach (var admin in Admins)
+            {
+                if (admin.Username == username && admin.Password == password)
+                {
+                    SignedInUser = admin;
+
+                    return true;
+                }
+
             }
 
             return false;
