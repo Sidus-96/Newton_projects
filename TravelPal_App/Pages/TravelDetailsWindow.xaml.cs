@@ -21,6 +21,7 @@ namespace TravelPal_App.Pages
             InitializeComponent();
             foreach (var country in Enum.GetValues(typeof(Countries_s)))
             {
+
                 comboCountriesDetail.Items.Add(country);
             }
 

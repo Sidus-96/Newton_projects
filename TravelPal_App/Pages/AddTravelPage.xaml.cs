@@ -19,6 +19,9 @@ namespace TravelPal_App.Pages
 
             foreach (var country in Enum.GetValues(typeof(Countries_s)))
             {
+
+
+
                 comboCountries.Items.Add(country);
             }
 
@@ -76,7 +79,33 @@ namespace TravelPal_App.Pages
 
             string packItemName = txtItemPacklist.Text;
             string? packItemQuantity = comboboxQuantityPack.SelectedItem.ToString();
+
             string? isrequired = "";
+            if (chkboxTravelDocument.IsChecked == true)
+            {
+                foreach (var country in Enum.GetValues(typeof(Countries_s)))
+                {
+
+                    string country_check = country.ToString();
+                    if (country_check == comboCountries.SelectedItem.ToString())
+                    {
+                        if (Enum.IsDefined(typeof(Countries_Europe), country_check) && Enum.IsDefined(typeof(Countries_Europe), UserManager.SignedInUser.Country))
+                        {
+                            isrequired = "no";
+                        }
+                        else if (Enum.IsDefined(typeof(Countries_Europe), UserManager.SignedInUser.Country) == false)
+                        {
+                            isrequired = "yes";
+                        }
+                        else
+                        {
+                            isrequired = "yes";
+                        }
+
+
+                    }
+                }
+            }
             if (packItemName.Trim() == null || packItemName == "")
             {
                 MessageBox.Show("You need to add an item first", "Warning");
@@ -85,6 +114,8 @@ namespace TravelPal_App.Pages
             {
                 lstViewPackList.Items.Add(new Pack_Item { PackItem = packItemName, PackItemQuantity = packItemQuantity, PackItemIsRequired = isrequired });
             }
+
+
         }
 
         private void btnSaveTravel_Click(object sender, RoutedEventArgs e)
