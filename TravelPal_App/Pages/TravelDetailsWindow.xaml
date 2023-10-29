@@ -45,8 +45,8 @@
                 </TextBox>
 
             </StackPanel>
-            <ComboBox Name="cmbTypeOfTravelDetails"  Grid.Row="1" Grid.Column="1" Margin="20,10,20,0"  Height="35" HorizontalContentAlignment="Center" FontSize="16"  IsEditable="True"  IsReadOnly="True"  Text="-- For vaccation or work? --" Opacity="0.8" SelectionChanged="cmbTypeOfTravelDetails_SelectionChanged" IsEnabled="False"  >
-                <ComboBoxItem Content="Vaccation"/>
+            <ComboBox Name="cmbTypeOfTravelDetails"  Grid.Row="1" Grid.Column="1" Margin="20,10,20,0"  Height="35" HorizontalContentAlignment="Center" FontSize="16"  IsEditable="True"  IsReadOnly="True"  Text="-- For Vacation or work? --" Opacity="0.8" SelectionChanged="cmbTypeOfTravelDetails_SelectionChanged" IsEnabled="False"  >
+                <ComboBoxItem Content="Vacation"/>
                 <ComboBoxItem Content="Work"/>
             </ComboBox>
             <CheckBox Name="chkboxAllInclusiveDetails" Content="All inclusive?" FontSize="13" Margin="20,7,20,0" Visibility="Collapsed" IsEnabled="False" />

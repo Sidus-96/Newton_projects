@@ -53,9 +53,9 @@ namespace TravelPal_App.Pages
 
 
 
-                    switch (travel.TypeOfTravel) //För att visa och dölja beroende på om man har valt Vaccation eller Work
+                    switch (travel.TypeOfTravel) //För att visa och dölja beroende på om man har valt Vacation eller Work
                     {
-                        case "Vaccation":
+                        case "Vacation":
                             chkboxAllInclusiveDetails.Visibility = System.Windows.Visibility.Visible;
                             if (travel.Allinclusive == "yes")
                             {
@@ -70,7 +70,7 @@ namespace TravelPal_App.Pages
                             txtWorkDetailsDetails.Text = travel.WorkDetails.ToString();
                             chkboxAllInclusiveDetails.Visibility = System.Windows.Visibility.Collapsed;
                             break;
-                    } //Se om det är en work eller vaccation
+                    } //Se om det är en work eller Vacation
 
                     calenderdateFromDetails.Text = travel.FromDate;
                     calenderdateToDetails.Text = travel.ToDate;
@@ -101,7 +101,7 @@ namespace TravelPal_App.Pages
         private void cmbTypeOfTravelDetails_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            switch (cmbTypeOfTravelDetails.SelectedIndex) //För att visa och dölja beroende på om man har valt Vaccation eller Work
+            switch (cmbTypeOfTravelDetails.SelectedIndex) //För att visa och dölja beroende på om man har valt Vacation eller Work
             {
                 case 0:
                     chkboxAllInclusiveDetails.Visibility = System.Windows.Visibility.Visible;

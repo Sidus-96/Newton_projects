@@ -48,7 +48,7 @@ namespace TravelPal_App.Pages
         private void cmbTypeOfTravel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            switch (cmbTypeOfTravel.SelectedIndex) //För att visa och dölja beroende på om man har valt Vaccation eller Work
+            switch (cmbTypeOfTravel.SelectedIndex) //För att visa och dölja beroende på om man har valt Vacation eller Work
             {
                 case 0:
                     chkboxAllInclusive.Visibility = System.Windows.Visibility.Visible;
