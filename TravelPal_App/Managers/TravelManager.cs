@@ -10,13 +10,17 @@ namespace TravelPal_App.Managers
         public static List<Travel> Travelsadded { get; set; } = new()
         {
 
-              new Travel { User = "user",Id= 1,NumberOfTravelers=1, Country= "Sweden",TypeOfTravel= "Vacation",Allinclusive= "yes",WorkDetails= " ",FromDate= "2023-10-25",ToDate= "2023-11-25"},
+              new Travel { User = "user",Id= 1,NumberOfTravelers=1, Country= "Sweden",City ="Stockholm", TypeOfTravel= "Vacation",Allinclusive= "yes",WorkDetails= " ",FromDate= "2023-10-25",ToDate= "2023-11-25"},
+              new Travel { User = "user",Id= 2,NumberOfTravelers=8, Country= "Denmark",TypeOfTravel= "Work",Allinclusive= "no",WorkDetails= "Möte om något viktigt",FromDate= "2023-12-24",ToDate= "2023-12-30"},
 
         };
         public static Travel? SelectedId { get; set; }
         public static List<Pack_Item> Pack_Items { get; set; } = new()
         {
-
+            new Pack_Item {Id = 1, PackItem ="Skjorta", PackItemQuantity = "2", PackItemIsRequired=" "},
+            new Pack_Item {Id = 1, PackItem ="byxor", PackItemQuantity = "3", PackItemIsRequired=" "},
+            new Pack_Item {Id = 2, PackItem ="Anteckningar", PackItemQuantity = "1", PackItemIsRequired=" "},
+            new Pack_Item {Id = 2, PackItem ="Festplan för AW", PackItemQuantity = "1", PackItemIsRequired=" "},
 
         };
         public static Pack_Item? AddPackItem(string packItemName, string quantity, string isrequired)

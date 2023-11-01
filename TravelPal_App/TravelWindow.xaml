@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravelPal_App"
         mc:Ignorable="d"
-        Title="Travel Pal" MaxHeight="800" MinHeight="500" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"  Background="MediumSlateBlue" >
+        Title="Travel Pal" MaxHeight="750" MinHeight="500" Width="750" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"  Background="MediumSlateBlue" >
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="\images/background_stock_2.jpg" Opacity="0.2"/>
@@ -31,7 +31,7 @@
                     <GradientStop Color="MintCream" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0,30,0,0"  >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0,37,0,0"  >
                 
 
 
