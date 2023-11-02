@@ -8,17 +8,19 @@ namespace TravelPal_App.Managers
     {
         public static List<User> Users { get; set; } = new()
         {
-           new User("user","password","Sweden"),
+           new User("user","password","Sweden",false),
         };
         public static List<Admin> Admins { get; set; } = new()
         {
-            new Admin("admin","password", "Sweden")
+            new Admin("admin","password", "Sweden",true)
         };
         public static IUser? SignedInUser { get; set; }
 
-        public static bool AddUser(string username, string password, string country) //Borde fråga  Albin om detta är okej användning av interface
+
+        public static bool AddUser(string username, string password, string country)
         {
-            User newUser = new(username, password, country);
+            bool welcomemsg = false;
+            User newUser = new(username, password, country, welcomemsg);
             Users.Add(newUser);
             return true;
         }

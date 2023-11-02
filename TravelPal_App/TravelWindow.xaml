@@ -57,9 +57,16 @@
                     <ImageBrush/>
                 </Button.Background>
             </Button>
+            <Button x:Name="btnInformation" Height="30" Width="170" Content="Information" Margin="0,460,0,0" FontSize="20" BorderThickness="1,1,1,1"  VerticalAlignment="Center" Click="btnInformation_Click"  >
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
 
 
         </StackPanel>
+        
+        
         <Button Name="btnSignOut" Grid.Column="0" Grid.Row="2" Content="Sign out" FontSize="15" Margin=" 0,1,0,2" Opacity="0.8" Click="btnSignOut_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

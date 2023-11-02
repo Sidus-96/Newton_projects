@@ -8,15 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\AddTravel_button.png" />
     <None Remove="Images\background_stock.jpg" />
     <None Remove="Images\background_stock_2.jpg" />
+    <None Remove="Images\dashboard_button.png" />
     <None Remove="Images\settingscog.png" />
     <None Remove="Images\travelpal_logo.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\AddTravel_button.png" />
     <Resource Include="Images\background_stock.jpg" />
     <Resource Include="Images\background_stock_2.jpg" />
+    <Resource Include="Images\dashboard_button.png" />
     <Resource Include="Images\settingscog.png" />
     <Resource Include="Images\travelpal_logo.png" />
   </ItemGroup>

@@ -5,6 +5,8 @@
         string Username { get; set; }
         string Password { get; set; }
         string Country { get; set; }
+        bool Welcomemsg { get; set; }
+
         //  string IUser(string username, string password, string country); // Fråga Albin
 
 
