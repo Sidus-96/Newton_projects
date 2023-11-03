@@ -33,6 +33,10 @@ namespace TravelPal_App.Pages
 
         private void btnDetails_Click(object sender, RoutedEventArgs e)
         {
+            if (LstDashBoard.SelectedIndex < 0)
+            {
+                MessageBox.Show("You need choose a travel first");
+            }
             int travelIndex = LstDashBoard.SelectedIndex;
             var travelId = LstDashBoard.SelectedItems[0];
             TravelManager.SetSelectedId(((TravelPal_App.Models.Travel)travelId).Id);

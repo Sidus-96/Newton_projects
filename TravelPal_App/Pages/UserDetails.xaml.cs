@@ -93,8 +93,21 @@ namespace TravelPal_App.Pages
                         if (updateUserName)
                         {
                             userupdate.Username = newUsername;
+                            foreach (Travel travel in TravelManager.Travelsadded)
+                            {
+
+                                if (txtUsernameDetails.Text == travel.User)
+                                {
+
+                                    travel.User = newUsername;
+                                }
+                            }
                             mUser = "Updated username\n";
+
                             UserManager.SignedInUser.Username = newUsername;
+
+
+
                         }
                         if (updatePassword)
                         {
