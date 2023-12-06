@@ -58,7 +58,7 @@ Title="TravelPal" Height="500" Width="600" ResizeMode="CanMinimize" Background="
                 </Button.Background>
             </Button>
 
-            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+            
                 <TextBlock VerticalAlignment="Center"> Don't have an account? Sign up</TextBlock>
                 <Button x:Name="btnAddUser" Background="{x:Null}" Margin="0,0,0,0"  BorderBrush="{x:Null}" Click="btnAddUser_Click">
 
