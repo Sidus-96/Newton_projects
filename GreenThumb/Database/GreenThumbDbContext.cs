@@ -13,6 +13,8 @@ namespace GreenThumb.Database
         }
         public DbSet<PlantModel> Plants { get; set; }
         public DbSet<InstructionModel> Instructions { get; set; }
+        public DbSet<UserModel> User { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -40,22 +42,31 @@ namespace GreenThumb.Database
               new InstructionModel()
               {
                   Id = 1,
-                  PlantID = 1,
+                  Name = "Lilja",
                   Instruction = "Vattna"
               },
                   new InstructionModel()
                   {
                       Id = 2,
-                      PlantID = 1,
+                      Name = "Lilja",
                       Instruction = "VästLäge"
                   },
                        new InstructionModel()
                        {
                            Id = 3,
-                           PlantID = 2,
+                           Name = "sommarväxt",
                            Instruction = "Vattna lite sådär"
 
                        });
+            modelBuilder.Entity<UserModel>()
+                .HasData(
+                new UserModel()
+                {
+                    Id = 1,
+                    Username = "admin",
+                    Password = "password"
+
+                });
 
         }
 

@@ -34,15 +34,16 @@ namespace GreenThumb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PlantID")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("PlantModelId")
+                    b.Property<int?>("plantId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PlantModelId");
+                    b.HasIndex("plantId");
 
                     b.ToTable("Instructions");
 
@@ -51,19 +52,19 @@ namespace GreenThumb.Migrations
                         {
                             Id = 1,
                             Instruction = "Vattna",
-                            PlantID = 1
+                            Name = "Lilja"
                         },
                         new
                         {
                             Id = 2,
                             Instruction = "VästLäge",
-                            PlantID = 1
+                            Name = "Lilja"
                         },
                         new
                         {
                             Id = 3,
                             Instruction = "Vattna lite sådär",
-                            PlantID = 1
+                            Name = "sommarväxt"
                         });
                 });
 
@@ -96,16 +97,47 @@ namespace GreenThumb.Migrations
                         });
                 });
 
+            modelBuilder.Entity("GreenThumb.Models.UserModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Password = "password",
+                            Username = "admin"
+                        });
+                });
+
             modelBuilder.Entity("GreenThumb.Models.InstructionModel", b =>
                 {
-                    b.HasOne("GreenThumb.Models.PlantModel", null)
-                        .WithMany("PlantInstruction")
-                        .HasForeignKey("PlantModelId");
+                    b.HasOne("GreenThumb.Models.PlantModel", "plant")
+                        .WithMany("Instructions")
+                        .HasForeignKey("plantId");
+
+                    b.Navigation("plant");
                 });
 
             modelBuilder.Entity("GreenThumb.Models.PlantModel", b =>
                 {
-                    b.Navigation("PlantInstruction");
+                    b.Navigation("Instructions");
                 });
 #pragma warning restore 612, 618
         }
