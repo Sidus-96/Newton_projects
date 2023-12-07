@@ -7,7 +7,54 @@
         mc:Ignorable="d"
         Title="PlantWindow" Height="450" Width="800">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="347,161,0,0" TextWrapping="Wrap" Text="dqwdwqdwqdqwqdw" VerticalAlignment="Top" Width="120"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+       
+        <StackPanel Grid.Column="1" Grid.Row="0" >
+            <TextBlock Text="Search for plant" FontSize="15"  />
+            <TextBox Name="txtSearchbar"  Width="245" Height ="40" HorizontalAlignment="Left"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Name ="btnSearch"  Content="Search" Width="80" Height="55" HorizontalAlignment="Left" Click="btnSearch_Click" />
+                <Button  Name="btnResetSearch" Content="Reset" Width="80" Height="55" HorizontalAlignment="Left" Click="btnResetSearch_Click" />
+            </StackPanel>
+           
+        </StackPanel>
+        <ListView x:Name="lstPlant" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"  ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <ListView.Background>
+                <SolidColorBrush Color="DarkGreen" Opacity="0.6"/>
+            </ListView.Background>
+          
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding PlantName}" Width="70"/>
+                  
+                </GridView>
+
+            </ListView.View>
+        </ListView>
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" >
+            <Button Name="btnPlantDetails" Content="Details" Width="80" Height="55" HorizontalAlignment="Left" Click="Button_Click" />
+            <Button Name="btnDeletePlant"  Content="Delete Plant" Width="80" Height="55" HorizontalAlignment="Left" Margin="30 0 0 0" Click="btnDeletePlant_Click"/>
+
+        </StackPanel>
+        <Button Grid.Column="0" Grid.Row="1" Content="Add plant" Width="80" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+
+
+
+
 
     </Grid>
 </Window>

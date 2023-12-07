@@ -1,4 +1,5 @@
 ﻿using GreenThumb.Database;
+using Microsoft.EntityFrameworkCore;
 using System.Windows;
 
 namespace GreenThumb
@@ -14,10 +15,8 @@ namespace GreenThumb
             using (GreenThumbDbContext context = new())
             {
                 //   var planta = context.Plants.First(p => p.Name == "Lilja");
-                var plantinstru = context.Instructions.First(w => w.Name == "Lilja");
-
-                // var plantwithinstruc = context.Instructions.Include(w => w.plant).First(o => o.Name == "Lilja");
-                var plantwithinstruc = context.Instructions.Where(o => o.Name == "Lilja").ToList(); //för att få fram alla instruktioner per växt
+                //   var plantinstru = context.Instructions.First(w => w.Name == "Lilja");
+                var plantWithInstructions = context.Plants.Include(w => w.Instructions).First(w => w.Id == 1);
 
             }
 

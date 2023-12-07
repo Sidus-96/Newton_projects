@@ -42,19 +42,19 @@ namespace GreenThumb.Database
               new InstructionModel()
               {
                   Id = 1,
-                  Name = "Lilja",
+                  PlantId = 1,
                   Instruction = "Vattna"
               },
                   new InstructionModel()
                   {
                       Id = 2,
-                      Name = "Lilja",
+                      PlantId = 1,
                       Instruction = "VästLäge"
                   },
                        new InstructionModel()
                        {
                            Id = 3,
-                           Name = "sommarväxt",
+                           PlantId = 2,
                            Instruction = "Vattna lite sådär"
 
                        });

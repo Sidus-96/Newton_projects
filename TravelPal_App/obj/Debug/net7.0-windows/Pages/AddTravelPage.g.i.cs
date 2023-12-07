@@ -174,7 +174,7 @@ namespace TravelPal_App.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TravelPal_App;component/pages/addtravelpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TravelPal_App;V1.0.0.0;component/pages/addtravelpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\AddTravelPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

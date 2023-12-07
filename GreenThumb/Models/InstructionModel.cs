@@ -6,9 +6,12 @@ namespace GreenThumb.Models
     {
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; } = null!;
-        public string Instruction { get; set; } = null!;
-        public PlantModel? plant { get; set; }
+        public string? Instruction { get; set; }
+        public int PlantId { get; set; }
+        public PlantModel? Plant { get; set; } = null!;
+
+
+
 
 
 
