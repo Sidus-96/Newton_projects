@@ -1,5 +1,4 @@
 ﻿using GreenThumb.Database;
-using Microsoft.EntityFrameworkCore;
 using System.Windows;
 
 namespace GreenThumb
@@ -16,7 +15,7 @@ namespace GreenThumb
             {
                 //   var planta = context.Plants.First(p => p.Name == "Lilja");
                 //   var plantinstru = context.Instructions.First(w => w.Name == "Lilja");
-                var plantWithInstructions = context.Plants.Include(w => w.Instructions).First(w => w.Id == 1);
+                // var plantWithInstructions = context.Plants.Include(w => w.Instructions).First(w => w.Id == 1);
 
             }
 

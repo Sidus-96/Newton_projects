@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\GreenThumb\App.xaml
-2-930283790
+4-1887233982
 
-16338759156
+27-40816906
 219-1770646283
-MainWindow.xaml;PlantWindow.xaml;
+AddPlantWindow.xaml;MainWindow.xaml;PlantDetailsWindow.xaml;PlantWindow.xaml;
 
 True
 

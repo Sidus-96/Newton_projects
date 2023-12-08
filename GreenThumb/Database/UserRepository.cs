@@ -2,7 +2,7 @@
 
 namespace GreenThumb.Database
 {
-    internal class UserRepository
+    public class UserRepository
     {
         private readonly GreenThumbDbContext _context;
 

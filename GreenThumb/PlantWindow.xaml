@@ -32,24 +32,14 @@
            
         </StackPanel>
         <ListView x:Name="lstPlant" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"  ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible">
-            <ListView.Background>
-                <SolidColorBrush Color="DarkGreen" Opacity="0.6"/>
-            </ListView.Background>
-          
-            <ListView.View>
-                <GridView >
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding PlantName}" Width="70"/>
-                  
-                </GridView>
-
-            </ListView.View>
+            
         </ListView>
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" >
-            <Button Name="btnPlantDetails" Content="Details" Width="80" Height="55" HorizontalAlignment="Left" Click="Button_Click" />
+            <Button Name="btnPlantDetails" Content="Details" Width="80" Height="55" HorizontalAlignment="Left" Click="btnPlantDetails_Click_1"  />
             <Button Name="btnDeletePlant"  Content="Delete Plant" Width="80" Height="55" HorizontalAlignment="Left" Margin="30 0 0 0" Click="btnDeletePlant_Click"/>
 
         </StackPanel>
-        <Button Grid.Column="0" Grid.Row="1" Content="Add plant" Width="80" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Button Name ="btnPlantWindow"  Grid.Column="0" Grid.Row="1" Content="Add plant" Width="80" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnPlantWindow_Click" />
 
 
 

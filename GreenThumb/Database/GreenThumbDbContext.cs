@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GreenThumb.Database
 {
-    internal class GreenThumbDbContext : DbContext
+    public class GreenThumbDbContext : DbContext
     {
 
 
@@ -23,6 +23,8 @@ namespace GreenThumb.Database
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<PlantModel>().HasMany(h => h.Instructions).WithOne(a => a.Plant).OnDelete(DeleteBehavior.Cascade);
+
 
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<PlantModel>()
