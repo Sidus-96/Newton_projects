@@ -40,6 +40,7 @@
 
         </StackPanel>
         <Button Name ="btnPlantWindow"  Grid.Column="0" Grid.Row="1" Content="Add plant" Width="80" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnPlantWindow_Click" />
+        <Button Name ="btnGoToGarden"  Grid.Column="0" Grid.Row="2" Content="Go to Garden" Width="80" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnGoToGarden_Click" />
 
 
 

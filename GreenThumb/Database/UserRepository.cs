@@ -10,10 +10,11 @@ namespace GreenThumb.Database
         {
             _context = context;
         }
-        public void Add(PlantModel userModel) //Lägga till user
+        public void Add(UserModel userModel) //Lägga till user
         {
-            _context.Plants.Add(userModel);
+            _context.User.Add(userModel);
         }
+
 
     }
 }

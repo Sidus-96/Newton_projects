@@ -84,12 +84,9 @@ namespace GreenThumb
                     plantRepository.Add(newplant);
                     context.SaveChanges();//sparar för att få fram id så instruktioner kan komma till växten
 
-
-
-
                     instructionRepository instructionRepository = new(context);
 
-                    for (int i = 0; i < lstNewInstructions.Items.Count; i++)
+                    for (int i = 0; i < lstNewInstructions.Items.Count; i++) //Looppa igenom listview listan och lägg in i databasen
                     {
                         InstructionModel newinstruction = new InstructionModel();
 

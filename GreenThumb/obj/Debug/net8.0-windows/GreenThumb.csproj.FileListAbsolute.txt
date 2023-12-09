@@ -59,3 +59,7 @@ C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\GreenThumb\obj\Debug\net8.0
 C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\GreenThumb\obj\Debug\net8.0-windows\AddPlantWindow.baml
 C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\GreenThumb\obj\Debug\net8.0-windows\PlantDetailsWindow.g.cs
 C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\GreenThumb\obj\Debug\net8.0-windows\PlantDetailsWindow.baml
+C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\GreenThumb\obj\Debug\net8.0-windows\RegisterWindow.g.cs
+C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\GreenThumb\obj\Debug\net8.0-windows\RegisterWindow.baml
+C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\GreenThumb\obj\Debug\net8.0-windows\GardenWindow.g.cs
+C:\Users\TimNo\source\repos\Sidus-96\Newton_projects\GreenThumb\obj\Debug\net8.0-windows\GardenWindow.baml

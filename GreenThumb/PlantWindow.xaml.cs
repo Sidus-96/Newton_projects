@@ -27,7 +27,10 @@ namespace GreenThumb
                 if (planta != null)
                 {
                     lstPlant.Items.Clear();
-                    lstPlant.Items.Add(new PlantModel { Name = planta.Name });
+                    ListViewItem item = new();
+                    item.Tag = planta;
+                    item.Content = planta.Name;
+                    lstPlant.Items.Add(item);
                 }
                 else
                 {
@@ -62,20 +65,24 @@ namespace GreenThumb
                     {
 
 
-                        var selectedPlant = lstPlant.SelectedItem;
-                        string plantToDelete = ((GreenThumb.Models.PlantModel)selectedPlant).Name;
+                        var selectedPlant = lstPlant.SelectedValue;
+                        string? plantToDelete = ((System.Windows.Controls.ContentControl)selectedPlant).Content.ToString();
 
+                        if (plantToDelete != null && plantToDelete.Length > 0)
+                        {
+                            PlantRepository plantRepository = new(context);
+                            int plantId = plantRepository.Delete(plantToDelete);
+                            GardenRepository removeFromGarden = new(context);
+                            if (plantId != 0)
+                            {
+                                removeFromGarden.Delete(plantId);
+                            }
 
-                        PlantRepository plantRepository = new(context);
-                        plantRepository.Delete(plantToDelete);
-                        context.SaveChanges();
-                        GetAllPlants();
-                        MessageBox.Show("Plant deleted", "Success");
-
-
+                            context.SaveChanges();
+                            GetAllPlants();
+                            MessageBox.Show("Plant deleted", "Success");
+                        }
                     }
-
-
                 }
             }
         }
@@ -90,12 +97,11 @@ namespace GreenThumb
 
                 var plants = plantRepository.GetAll();
 
-                foreach (var plant in plants)
+                foreach (var plant in plants) //Ta fram alla växter och lägg in i Listview
                 {
                     ListViewItem item = new();
                     item.Tag = plant;
                     item.Content = plant.Name;
-
                     lstPlant.Items.Add(item);
                 }
             }
@@ -113,7 +119,7 @@ namespace GreenThumb
 
         private void btnPlantDetails_Click_1(object sender, RoutedEventArgs e)
         {
-            ListViewItem selectedItem = (ListViewItem)lstPlant.SelectedItem;
+            ListViewItem selectedItem = (ListViewItem)lstPlant.SelectedItem; //Ta fram vilket ID som användare valt
             if (selectedItem != null)
             {
                 PlantModel selectPlant = (PlantModel)selectedItem.Tag;
@@ -127,6 +133,13 @@ namespace GreenThumb
             {
                 MessageBox.Show("Chosse a plant first");
             }
+        }
+
+        private void btnGoToGarden_Click(object sender, RoutedEventArgs e)
+        {
+            GardenWindow gardenWindow = new GardenWindow();
+            gardenWindow.Show();
+            Close();
         }
     }
 }

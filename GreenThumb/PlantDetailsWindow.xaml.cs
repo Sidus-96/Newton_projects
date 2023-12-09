@@ -1,4 +1,5 @@
 ﻿using GreenThumb.Database;
+using GreenThumb.Manager;
 using GreenThumb.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Windows;
@@ -41,7 +42,7 @@ namespace GreenThumb
         {
             txtAddInstruction.IsEnabled = true;
             txtchangeplant.IsEnabled = true;
-
+            btnEditInsctruction.IsEnabled = true;
             btnSaveChanges.IsEnabled = true;
 
         }
@@ -71,6 +72,7 @@ namespace GreenThumb
 
                 context.SaveChanges();
                 txtAddInstruction.Clear();
+                MessageBox.Show("Instruction Added");
             }
         }
 
@@ -118,12 +120,6 @@ namespace GreenThumb
             }
 
             getAll();
-
-            //int index = lstDetailsInstructions.SelectedIndex;
-            //lstDetailsInstructions.Items[index] = txtEditInstruction.Text;
-
-
-
         }
         public void getAll()
         {
@@ -138,6 +134,54 @@ namespace GreenThumb
                     item.Content = instruction.Instruction;
 
                     lstDetailsInstructions.Items.Add(item);
+                }
+            }
+
+        }
+
+        private void btnAddToGarden_Click(object sender, RoutedEventArgs e)
+        {
+            using (GreenThumbDbContext context = new())
+            {
+                GardenRepository gardenRepository = new(context);
+
+
+                GardenModel newgarden = new GardenModel();
+
+                newgarden.UserId = UserManager.SignedInUser;
+                newgarden.PlantId = PlantDetailId;
+
+                gardenRepository.Add(newgarden);
+
+
+
+                context.SaveChanges();
+                MessageBox.Show("Plant added to your garden");
+
+            }
+        }
+
+        private void btnSaveChanges_Click(object sender, RoutedEventArgs e)
+        {
+            if (Plantname != txtchangeplant.Text)
+            {
+                using (GreenThumbDbContext context = new())
+                {
+                    PlantRepository plantRepository = new(context);
+
+
+                    PlantModel updatePlant = new PlantModel();
+
+
+                    updatePlant.Name = txtchangeplant.Text;
+
+                    plantRepository.Update(PlantDetailId, updatePlant);
+
+
+
+                    context.SaveChanges();
+                    MessageBox.Show("Plant updated");
+
                 }
             }
 

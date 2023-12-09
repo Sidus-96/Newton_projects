@@ -1,4 +1,8 @@
-﻿using GreenThumb.Models;
+﻿using EntityFrameworkCore.EncryptColumn.Extension;
+using EntityFrameworkCore.EncryptColumn.Interfaces;
+using EntityFrameworkCore.EncryptColumn.Util;
+using GreenThumb.Manager;
+using GreenThumb.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace GreenThumb.Database
@@ -7,14 +11,19 @@ namespace GreenThumb.Database
     {
 
 
-        public GreenThumbDbContext()
-        {
 
-        }
+        private readonly IEncryptionProvider _provider;
         public DbSet<PlantModel> Plants { get; set; }
         public DbSet<InstructionModel> Instructions { get; set; }
         public DbSet<UserModel> User { get; set; }
+        public DbSet<GardenModel> Garden { get; set; }
 
+
+        public GreenThumbDbContext()
+        {
+            _provider = new GenerateEncryptionProvider(KeyManager.GetEncryptionkey());
+
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -24,7 +33,9 @@ namespace GreenThumb.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<PlantModel>().HasMany(h => h.Instructions).WithOne(a => a.Plant).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<UserModel>().HasMany(h => h.Gardens).WithOne(a => a.User).OnDelete(DeleteBehavior.Cascade);// För att få in växter i garden
 
+            modelBuilder.UseEncryption(_provider); //för kryptering av lössenord
 
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<PlantModel>()
@@ -69,6 +80,16 @@ namespace GreenThumb.Database
                     Password = "password"
 
                 });
+            modelBuilder.Entity<GardenModel>()
+               .HasData(
+               new GardenModel()
+               {
+                   Id = 1,
+                   PlantId = null,
+                   UserId = 1,
+
+
+               });
 
         }
 

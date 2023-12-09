@@ -10,15 +10,24 @@
     <Compile Update="AddPlantWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="GardenWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="PlantDetailsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="PlantWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="RegisterWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="AddPlantWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GardenWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
@@ -28,6 +37,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PlantWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="RegisterWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

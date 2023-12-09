@@ -1,4 +1,5 @@
 ﻿using GreenThumb.Database;
+using GreenThumb.Manager;
 using System.Windows;
 
 namespace GreenThumb
@@ -32,6 +33,7 @@ namespace GreenThumb
                 var user = context.User.FirstOrDefault(u => u.Username == username && u.Password == password); //Kontrollera så att lösenordet och användarnamnet är korrekt innan inloggning
                 if (user != null)
                 {
+                    UserManager.setUserId(user.Id);
 
                     PlantWindow plantwindow = new PlantWindow();
                     plantwindow.Show();
@@ -52,6 +54,18 @@ namespace GreenThumb
 
 
 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnRegisterWindow_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterWindow registerWindow = new RegisterWindow();
+            registerWindow.Show();
+            Close();
         }
     }
 }
