@@ -44,16 +44,6 @@ namespace GreenThumb
                     MessageBox.Show("Invalid username or password!", "Warning");
                 }
             }
-
-
-
-
-
-
-
-
-
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

@@ -117,7 +117,7 @@ namespace GreenThumb {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/GreenThumb;V1.0.0.0;component/plantwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/GreenThumb;component/plantwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\PlantWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

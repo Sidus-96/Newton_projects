@@ -71,26 +71,6 @@ namespace GreenThumb.Database
                            Instruction = "Vattna lite sådär"
 
                        });
-            modelBuilder.Entity<UserModel>()
-                .HasData(
-                new UserModel()
-                {
-                    Id = 1,
-                    Username = "admin",
-                    Password = "password"
-
-                });
-            modelBuilder.Entity<GardenModel>()
-               .HasData(
-               new GardenModel()
-               {
-                   Id = 1,
-                   PlantId = null,
-                   UserId = 1,
-
-
-               });
-
         }
 
     }
