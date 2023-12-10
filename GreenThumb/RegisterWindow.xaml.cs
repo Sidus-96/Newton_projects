@@ -48,14 +48,10 @@ namespace GreenThumb
 
                         GardenRepository gardenRepository = new(context);
 
-
                         GardenModel newgarden = new GardenModel();
 
                         newgarden.UserId = newUser.Id;
-
                         gardenRepository.Add(newgarden);
-
-
 
                         context.SaveChanges();
                         MessageBox.Show("Welcome", "Success");
@@ -64,8 +60,6 @@ namespace GreenThumb
                         Close();
 
                     }
-
-
                 }
             }
             else

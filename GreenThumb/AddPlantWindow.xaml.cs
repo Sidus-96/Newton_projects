@@ -53,7 +53,6 @@ namespace GreenThumb
         {
             string instruction = txtAddInstruction.Text.Trim();
             lstNewInstructions.Items.Add(instruction);
-
         }
 
         private void txtAddInsctruction_TextChanged(object sender, TextChangedEventArgs e)
@@ -98,7 +97,6 @@ namespace GreenThumb
 
                     context.SaveChanges();
                     MessageBox.Show("Plant added", "Success");
-
                     txtAddInstruction.Clear();
                     lstNewInstructions.Items.Clear();
                 }

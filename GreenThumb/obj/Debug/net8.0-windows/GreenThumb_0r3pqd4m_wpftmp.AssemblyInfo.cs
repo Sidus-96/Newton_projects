@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GreenThumb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2861197e90298f8c24909cbb2501ff6232bbb6a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("GreenThumb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GreenThumb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

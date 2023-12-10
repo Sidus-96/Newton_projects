@@ -30,12 +30,6 @@ namespace GreenThumb
             btnEditInsctruction.IsEnabled = false;
             txtchangeplant.Text = plantname;
             getAll();
-
-
-
-
-
-
         }
 
         private void btnUnlockinputs_Click(object sender, RoutedEventArgs e)
@@ -61,9 +55,7 @@ namespace GreenThumb
             {
                 instructionRepository instructionRepository = new(context);
 
-
                 InstructionModel newinstruction = new InstructionModel();
-
                 newinstruction.Instruction = txtAddInstruction.Text;
                 newinstruction.PlantId = PlantDetailId;
                 instructionRepository.Add(newinstruction);
@@ -145,16 +137,11 @@ namespace GreenThumb
             {
                 GardenRepository gardenRepository = new(context);
 
-
                 GardenModel newgarden = new GardenModel();
 
                 newgarden.UserId = UserManager.SignedInUser;
                 newgarden.PlantId = PlantDetailId;
-
                 gardenRepository.Add(newgarden);
-
-
-
                 context.SaveChanges();
                 MessageBox.Show("Plant added to your garden");
 
